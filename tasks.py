@@ -9,4 +9,7 @@ logger = get_task_logger(__name__)
 @app.task
 def add(x, y):
     logger.info(f'Adding {x} + {y}')
+    if x == 4:
+        assert False, "cannot add 4"
+
     return x + y
